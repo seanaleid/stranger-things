@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const CORS = require('cors');
 
 // bring in the router
-const characterRouter = require('../characters/charactersRouter.js');
+// const characterRouter = require('../characters/charactersRouter.js');
 
 // create the server
 const server = express();
@@ -15,3 +15,11 @@ const server = express();
 server.use(helmet());
 server.use(CORS());
 server.use(express.json());
+
+// server.use('/api/router', characterRouter);
+
+server.get('/', (req, res) => {
+    res.send(`<h1>HELLO WORLD</h1>`)
+})
+
+module.exports = server;
